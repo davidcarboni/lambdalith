@@ -1,0 +1,43 @@
+{
+  "name": "lambdalith",
+  "version": "0.1.0",
+  "bin": {
+    "project": "bin/lambdalith.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "lint": "eslint --fix --ext ts bin lib src",
+    "secrets": "ts-node src/github/github.ts --delete"
+  },
+  "devDependencies": {
+    "@octokit/types": "*",
+    "@types/aws-lambda": "*",
+    "@types/jest": "*",
+    "@types/libsodium-wrappers": "*",
+    "@types/lodash": "*",
+    "@types/node": "*",
+    "@types/source-map-support": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "aws-cdk": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-import-resolver-typescript": "*",
+    "eslint-plugin-import": "*",
+    "jest": "*",
+    "ts-jest": "*",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@octokit/rest": "*",
+    "aws-cdk-lib": "*",
+    "aws-lambda": "*",
+    "constructs": "*",
+    "libsodium-wrappers": "*",
+    "lodash": "*",
+    "source-map-support": "*"
+  }
+}

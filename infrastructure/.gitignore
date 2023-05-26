@@ -1,0 +1,11 @@
+# *.js -- enable checking in eslint config and lambda placeholder code
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# Ignore infrastructure secrets
+secrets
