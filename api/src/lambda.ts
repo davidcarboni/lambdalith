@@ -7,7 +7,7 @@ import {
 } from 'aws-lambda';
 import fs from 'fs';
 import * as cookie from 'cookie';
-import { Request, Route, Routes } from 'types';
+import { Request, Route, Routes } from './types';
 
 // The version of the code we're running
 if (fs.existsSync('COMMIT_HASH')) {

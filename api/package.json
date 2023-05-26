@@ -8,7 +8,7 @@
     "test": "mocha -r ts-node/register -r tsconfig-paths/register 'test/**/*.spec.ts' # tsconfig-paths/register helps resolve imports in tests",
     "test:integration": "mocha  --timeout 10000 -r ts-node/register -r tsconfig-paths/register 'test/integration/**/*.spec.ts'",
     "compile": "tsc",
-    "package": "rm -rf dist && mkdir -p dist && cp -r js/src dist && cp -r templates dist && cp package*.json dist && cd dist && npm ci --production && echo $(git rev-parse --short HEAD) > COMMIT_HASH && zip -r function.zip ."
+    "package": "rm -rf dist && mkdir -p dist && cp -r js/src dist && cp package*.json dist && cd dist && npm ci --production && echo $(git rev-parse --short HEAD) > COMMIT_HASH && zip -r function.zip ."
   },
   "repository": {
     "type": "git",

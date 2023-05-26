@@ -1,6 +1,9 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { parseBody, standardHeaders, standardPath, standardQueryParameters } from 'lambda';
+import {
+  parseBody, standardHeaders, standardPath,
+  standardQueryParameters,
+} from 'lambda';
 
 describe('lambda.ts', () => {
   describe('standardPath', () => {
