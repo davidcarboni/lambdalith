@@ -9,6 +9,10 @@ import fs from 'fs';
 import * as cookie from 'cookie';
 import { Request, Route, Routes } from './types';
 
+const routes: Routes = {
+  '/api/ping': { GET: async (request: Request) => ({ statusCode: 200, body: request }) },
+};
+
 // The version of the code we're running
 if (fs.existsSync('COMMIT_HASH')) {
   process.env.COMMIT_HASH = fs.readFileSync('COMMIT_HASH').toString().trim();
@@ -111,10 +115,6 @@ export function parseRequest(event: APIGatewayProxyEvent): Request {
     cookies: parseCookie(event.headers),
   };
 }
-
-const routes: Routes = {
-  '/api/ping': { GET: async (request: Request) => ({ statusCode: 200, body: request }) },
-};
 
 /**
  * Generic routing handler
