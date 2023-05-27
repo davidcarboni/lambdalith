@@ -1,4 +1,4 @@
-name: web
+name: api
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
     paths:
     # Build when there are changes in the directory that holds the component,
     # or when this workflow file is changed
-    - 'web/**'
-    - '.github/workflows/web.yml'
+    - 'api/**'
+    - '.github/workflows/api.yml'
   schedule:
     # A weekly build to pick up updates and security patches for libraries
     - cron: "11 11 * * 1"
@@ -59,13 +59,3 @@ jobs:
         SLACK_COLOR: ${{ job.status }}
         SLACK_ICON_EMOJI: ":github_octocat:"
         SLACK_CHANNEL: build
-
-    - name: Dispatch integration tests
-      if: success()
-      env:
-         token: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        curl -v \
-          -X POST \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          https://api.github.com/repos/metricpipeline/metricpipeline/actions/workflows/integration-test.yml/dispatches -d '{"ref":"main","inputs":{"component_name":"web"}}'
