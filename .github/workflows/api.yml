@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - army
     paths:
     # Build when there are changes in the directory that holds the component,
     # or when this workflow file is changed
